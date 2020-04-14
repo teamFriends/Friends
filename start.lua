@@ -57,7 +57,7 @@ rm -fr ../.telegram-cli
 done
 ]])
 RunFriends:close()
-local RunTs = io.open("tk", 'w')
+local RunTs = io.open("fr", 'w')
 RunTs:write([[
 #!/usr/bin/env bash
 cd $HOME/Friends
@@ -72,7 +72,7 @@ end
 Files_Friends_Info()
 database:del(Server_Friends.."Token_Friends");database:del(Server_Friends.."Id_Friends");database:del(Server_Friends.."UserName_Friends")
 sudos = dofile('sudo.lua')
-os.execute('./ins.sh ins')
+os.execute('./install.sh ins')
 end 
 local function Load_File()  
 local f = io.open("./sudo.lua", "r")  
@@ -83,7 +83,7 @@ else
 f:close()  
 database:del(Server_Friends.."Token_Friends");database:del(Server_Friends.."Id_Friends");database:del(Server_Friends.."UserName_Friends")
 sudos = dofile('sudo.lua')
-os.execute('./ins.sh ins')
+os.execute('./install.sh ins')
 var = false
 end  
 return var
